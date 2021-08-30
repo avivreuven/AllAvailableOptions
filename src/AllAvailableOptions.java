@@ -6,13 +6,12 @@ public class AllAvailableOptions {
         int[] regularNum={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36};
         int[] strongNum={1,2,3,4,5,6,7};
         int[] tempArray= new int[COUNT];
-        int i,j=0,k=0;
         double sum;
-        for (i=0;i<COUNT;i++) {
+        for (int i=0;i<COUNT;i++) {
             tempArray[i]=i;
         }
-        //sum = combinationResult(regularNum.length,COUNT)*strongNum.length;
-        //System.out.println(sum);
+        sum = combinationResult(regularNum.length,COUNT)*strongNum.length;
+        System.out.println(sum);
         printOptions(regularNum,tempArray,strongNum);
     }
 
@@ -48,14 +47,14 @@ public class AllAvailableOptions {
                     }
                 }
             }
-            for (int j=0;j<strongNum.length;j++) {
+            for (int k : strongNum) {
                 for (int i = 0; i < COUNT; i++) {
                     System.out.print(regularNum[tempArray[i]]);
                     if (i != COUNT - 1) {
                         System.out.print(",");
                     }
                 }
-                System.out.print(" ["+strongNum[j]+"]\n");
+                System.out.print(" [" + k + "]\n");
             }
             tempArray[COUNT - 1]++;
         }
